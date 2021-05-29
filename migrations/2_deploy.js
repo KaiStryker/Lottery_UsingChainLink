@@ -4,7 +4,7 @@ const { LinkToken } = require('@chainlink/contracts/truffle/v0.4/LinkToken')
 module.exports = async (deployer, network, [defaultAccount]) => {
     if(!network.startsWith('kovan')){
         console.log('Currently only works with Kovan!')
-        LinkToken.setProvide(deployer.provider)
+        LinkToken.setProvider(deployer.provider)
     }
     else {
         const KOVAN_KEYHASH = '0x6c3699283bda56ad74f6b855546325b68d482e983852a7a82979cc4807b641f4'
