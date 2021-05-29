@@ -12,6 +12,7 @@ contract Lottery is VRFConsumerBase, Ownable {
     LOTTERY_STATE public lotteryState;
     AggregatorV3Interface internal ethUsdPriceFeed;
     address payable[] public players;
+    address public recentWinner;
     uint256 public usdEntryFee;
     uint256 public randomness;
     uint256 public fee;
@@ -77,6 +78,7 @@ contract Lottery is VRFConsumerBase, Ownable {
         require(randomness > 0, "random number not found");
         uint256 index = randomness % players.length;
         address payable winner = players[index];
+        recentWinner = winner;
         players = new address payable[](0);
         lotteryState = LOTTERY_STATE.CLOSED;
         randomness = randomness;
