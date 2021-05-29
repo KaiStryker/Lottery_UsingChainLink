@@ -1,6 +1,6 @@
 # Lottery Contract using Chainlink
 
-This contract uses Chainlink's oracle to conduct a lottery game based on a random number recieved by interacting with the Chainlink protocol. This was a fun build that showed me the power of using Chainlink to get off-chain data that can be used to enhance my smart contracts going forward.
+This contract uses Chainlink's oracle to conduct a lottery game based on a random number recieved by interacting with Chainlink. This was a fun build that showed me the power of using Chainlink to get off-chain data, that can be used to enhance my smart contracts going forward.
 
 ## Requirements
 
