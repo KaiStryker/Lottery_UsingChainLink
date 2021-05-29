@@ -5,6 +5,7 @@ This contract uses Chainlink's oracle to conduct a lottery game based on a rando
 ## Requirements
 
 - NPM
+- TRUFFLE
 
 ## Installation
 
