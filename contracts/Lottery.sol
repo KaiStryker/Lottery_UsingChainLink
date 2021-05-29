@@ -46,7 +46,7 @@ contract Lottery is VRFConsumerBase, Ownable {
         return costToEnter;
     }
 
-    function getLatestEthUsdPrice() public view returns(uint256){
+    function getLatestEthUsdPrice() internal view returns(uint256){
         (
             uint80 roundID,
             int price,
@@ -68,7 +68,7 @@ contract Lottery is VRFConsumerBase, Ownable {
         pickWinner(userProvidedSeed);
     }
 
-    function pickWinner(uint256 userProvidedSeed) public returns(bytes32){
+    function pickWinner(uint256 userProvidedSeed) private returns(bytes32){
         require(lotteryState == LOTTERY_STATE.CALCULATING_WINNER, "Needs to be calculating the winner");
         bytes32 requestId = requestRandomness(keyHash, fee, userProvidedSeed);
         emit RequestedRandomness(requestId);
